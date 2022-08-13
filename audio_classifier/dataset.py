@@ -68,7 +68,6 @@ class AudioDataset(Dataset):
                 time_mask,                                          # randomly mask out a chunk of time
                 freq_mask,                                          # randomly mask out a chunk of frequencies
                 Resize(cfg['image_size']),
-                # torchvision.transforms.Lambda(min_max_normalize),   # normalize so min is 0 and max is 1
             ])
         else:
             self.transform = Compose([                              # Transforms. Here's where we could add data augmentation (see Björn's lecture on August 11).
