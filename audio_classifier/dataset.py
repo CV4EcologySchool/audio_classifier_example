@@ -94,7 +94,7 @@ class AudioDataset(Dataset):
         for l in csv_lines:
             # split out the fields in the current row of the csv:
             asset_id, label, split_assignment, samplerate, channels, samples, duration_seconds = l.split(',')
-            # Note: From the dataset docuemntation, we know that all of the audio files have 1 channel, are 10s long, and have a sample rate of 22.05 kHz. But let's check those assumptions.
+            # Note: From the dataset documentation, we know that all of the audio files have 1 channel, are 10s long, and have a sample rate of 22.05 kHz. But let's check those assumptions.
             assert int(channels) == 1
             assert float(duration_seconds) == 10.0
             assert float(samplerate) == 22.05 * 1000
